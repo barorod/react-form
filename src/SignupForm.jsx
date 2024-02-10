@@ -9,9 +9,9 @@ function SignupForm() {
 	const updateLastName = (e) => {
 		setLastName(e.target.value);
 	};
-    const handleSubmit = () =? {
-        console.log(firstName, lastName)
-    }
+	const handleSubmit = () => {
+		console.log(firstName, lastName);
+	};
 	return (
 		<div>
 			<label htmlFor="firstname">First Name: </label>
