@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import ShoppingListForm from './ShoppingListForm';
+// import ShoppingListForm from './ShoppingListForm';
+import ValidatedShoppingListForm from './ValidatedShoppingListForm';
+import { v4 as uuid } from 'uuid';
 
-export default function ShoppingList({ item }) {
-	const [items, setItems] = useState([
-		{ id: 1, product: 'Bananas', quantity: 8 },
-		{ id: 2, product: 'Eggs', quantity: 12 },
-	]);
+export default function ShoppingList() {
+	const [items, setItems] = useState([]);
 	const addItem = (item) => {
-		setItems((curreItems) => [...curreItems, { ...item, id: 9 }]);
+		setItems((curreItems) => [...curreItems, { ...item, id: uuid() }]);
 	};
 	return (
 		<div>
@@ -19,7 +18,7 @@ export default function ShoppingList({ item }) {
 					</li>
 				))}
 			</ul>
-			<ShoppingListForm addItem={addItem} />
+			<ValidatedShoppingListForm newItem={addItem} />
 		</div>
 	);
 }
